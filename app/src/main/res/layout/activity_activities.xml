@@ -188,7 +188,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/dailychallenge"
                 android:layout_width="60dp"
                 android:layout_height="48dp"
                 android:background="@android:color/transparent"

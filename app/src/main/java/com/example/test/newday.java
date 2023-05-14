@@ -17,7 +17,7 @@ import java.io.IOException;
 public class newday extends AppCompatActivity {
     public static final String FILE_NAME = "log.txt";
 
-    Button openMain, activities, save;
+    Button openMain, activities, save, dailyChallenge;
     ProgressBar pb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,14 @@ public class newday extends AppCompatActivity {
                 openActivities();
             }
         });
+
+        dailyChallenge = findViewById(R.id.dailychallenge);
+        dailyChallenge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDailyChallenge();
+            }
+        });
     }
 
     private void openActivities() {
@@ -58,6 +66,11 @@ public class newday extends AppCompatActivity {
 
     private void openMain() {
         Intent I = new Intent(this, MainActivity.class);
+        startActivity(I);
+    }
+
+    private void openDailyChallenge() {
+        Intent I = new Intent(this, dailychallenge.class);
         startActivity(I);
     }
 

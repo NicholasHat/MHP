@@ -23,7 +23,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     public static final String FILE_NAME = "log.txt";
 
-    Button openActivities, newday;
+    Button openActivities, dailyChallenge, newday;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        dailyChallenge = findViewById(R.id.dailychallenge);
+        dailyChallenge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDailyChallenge();
+            }
+        });
         load();
     }
 
@@ -55,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void openActivities() {
         Intent I = new Intent(this, activities.class);
+        startActivity(I);
+    }
+    private void openDailyChallenge() {
+        Intent I = new Intent(this, dailychallenge.class);
         startActivity(I);
     }
 

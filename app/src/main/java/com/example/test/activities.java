@@ -8,12 +8,12 @@ import android.view.View;
 import android.widget.Button;
 
 public class activities extends AppCompatActivity {
-    Button openMain, newDay;
+    Button openMain, newDay, dailyChallenge;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activities);
-
+        //This is ALL THE Buttons UwU
         newDay = findViewById(R.id.newday);
         newDay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +30,13 @@ public class activities extends AppCompatActivity {
             }
         });
 
+        dailyChallenge = findViewById(R.id.dailychallenge);
+        dailyChallenge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDailyChallenge();
+            }
+        });
     }
 
     private void openNewDay() {
@@ -39,6 +46,10 @@ public class activities extends AppCompatActivity {
 
     private void openMain() {
         Intent I = new Intent(this, MainActivity.class);
+        startActivity(I);
+    }
+    private void openDailyChallenge() {
+        Intent I = new Intent(this, dailychallenge.class);
         startActivity(I);
     }
 }

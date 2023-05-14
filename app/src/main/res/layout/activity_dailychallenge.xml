@@ -1,43 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluegradient"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:context=".MainActivity">
+    tools:context=".dailychallenge">
 
-    <RelativeLayout
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:id="@+id/theUIKonfettiView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/graphbackround"
-        android:padding="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/graphView"
-            android:layout_width="350dp"
-            android:layout_height="500dp"
-            android:background="@color/white"
-            android:backgroundTint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.229">
+    <Button
+        android:id="@+id/dailyChallengeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="224dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        </com.jjoe64.graphview.GraphView>
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/dailyChallengeHeading"
+        android:layout_width="316dp"
+        android:layout_height="65dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Daily Challenge"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/theUIKonfettiView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.121" />
 
-
+    <TextView
+        android:id="@+id/dailyChallenge"
+        android:layout_width="252dp"
+        android:layout_height="160dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="dailyChallenge"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/theUIKonfettiView"
+        app:layout_constraintVertical_bias="0.334" />
     <com.google.android.material.bottomnavigation.BottomNavigationView
 
         android:id="@+id/bottomNavigationView"
@@ -97,7 +117,7 @@
                 android:layout_height="48dp"
                 android:background="@android:color/transparent"
                 android:text="D"
-                android:textColor="#E0E0E0"
+                android:textColor="#E8C7C8"
                 android:textSize="25dp"
                 app:iconTintMode="add"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -114,7 +134,7 @@
                 android:gravity="center|top"
                 android:text="A"
                 android:textAlignment="center"
-                android:textColor="#E8C7C8"
+                android:textColor="#E0E0E0"
                 android:textSize="25dp"
                 app:iconGravity="top"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -125,21 +145,4 @@
                 tools:ignore="SpeakableTextPresentCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="234dp"
-        android:layout_height="92dp"
-        android:fontFamily="sans-serif-black"
-        android:paddingLeft="10dp"
-        android:text="Home"
-        android:textColor="@color/white"
-        android:textSize="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
