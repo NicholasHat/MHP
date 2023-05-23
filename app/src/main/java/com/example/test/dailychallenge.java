@@ -17,7 +17,7 @@ import nl.dionsegijn.konfetti.core.emitter.EmitterConfig;
 import nl.dionsegijn.konfetti.core.models.Size;
 import nl.dionsegijn.konfetti.xml.KonfettiView;
 
-public class dailychallenge extends AppCompatActivity {
+public class dailychallenge extends NavigationActivity {
     private KonfettiView konfettiView = null;
     Button openMain, activities, newDay;
     @Override
@@ -48,41 +48,8 @@ public class dailychallenge extends AppCompatActivity {
         completedButton.setOnClickListener(view ->
                 konfettiView.start(party)
         );
-        newDay = findViewById(R.id.newday);
-        newDay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openNewDay();
-            }
-        });
-
-        openMain = findViewById(R.id.main);
-        openMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMain();
-            }
-        });
-        activities = findViewById(R.id.activities);
-        activities.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivities();
-            }
-        });
-    }
-    private void openNewDay() {
-        Intent I = new Intent(this, newday.class);
-        startActivity(I);
-    }
-
-    private void openMain() {
-        Intent I = new Intent(this, MainActivity.class);
-        startActivity(I);
-    }
-
-    private void openActivities() {
-        Intent I = new Intent(this, activities.class);
-        startActivity(I);
+        setNewDayClicker();
+        setActivitiesClicker();
+        setMainClicker();
     }
 }

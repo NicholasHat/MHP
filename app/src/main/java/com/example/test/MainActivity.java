@@ -20,55 +20,21 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends NavigationActivity {
     public static final String FILE_NAME = "log.txt";
 
     Button openActivities, dailyChallenge, newday;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        newday = findViewById(R.id.newday);
-        newday.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openNewDay();
-            }
-        });
-
-        openActivities = findViewById(R.id.activities);
-        openActivities.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivities();
-            }
-        });
-
-        dailyChallenge = findViewById(R.id.dailychallenge);
-        dailyChallenge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDailyChallenge();
-            }
-        });
+        setNewDayClicker();
+        setActivitiesClicker();
+        setDailyClicker();
         load();
     }
-
-    private void openNewDay() {
-        Intent I = new Intent(this, newday.class);
-        startActivity(I);
-    }
-
-    private void openActivities() {
-        Intent I = new Intent(this, activities.class);
-        startActivity(I);
-    }
-    private void openDailyChallenge() {
-        Intent I = new Intent(this, dailychallenge.class);
-        startActivity(I);
-    }
-
     public void load() {
         List<String> lines = null;
         ArrayList<String> load = new ArrayList<String>(5);

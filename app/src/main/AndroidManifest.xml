@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Test"
         tools:targetApi="31">
         <activity
+            android:name=".ProblemsJournalActivity"
+            android:exported="false" />
+        <activity
             android:name=".newday"
             android:exported="false">
             <meta-data

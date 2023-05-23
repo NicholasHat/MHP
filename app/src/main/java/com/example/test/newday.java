@@ -14,7 +14,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class newday extends AppCompatActivity {
+public class newday extends NavigationActivity {
     public static final String FILE_NAME = "log.txt";
 
     Button openMain, activities, save, dailyChallenge;
@@ -33,47 +33,10 @@ public class newday extends AppCompatActivity {
                 openMain();
             }
         });
-
-        openMain = findViewById(R.id.main);
-        openMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMain();
-            }
-        });
-
-        activities = findViewById(R.id.activities);
-        activities.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivities();
-            }
-        });
-
-        dailyChallenge = findViewById(R.id.dailychallenge);
-        dailyChallenge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDailyChallenge();
-            }
-        });
+        setMainClicker();
+        setActivitiesClicker();
+        setDailyClicker();
     }
-
-    private void openActivities() {
-        Intent I = new Intent(this, activities.class);
-        startActivity(I);
-    }
-
-    private void openMain() {
-        Intent I = new Intent(this, MainActivity.class);
-        startActivity(I);
-    }
-
-    private void openDailyChallenge() {
-        Intent I = new Intent(this, dailychallenge.class);
-        startActivity(I);
-    }
-
     public void save(int val) {
         String w = Integer.toString(val);
         try {
