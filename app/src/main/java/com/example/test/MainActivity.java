@@ -1,10 +1,6 @@
 package com.example.test;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import com.jjoe64.graphview.GraphView;
@@ -34,6 +30,7 @@ public class MainActivity extends NavigationActivity {
         setActivitiesClicker();
         setDailyClicker();
         load();
+        setButtonColor(R.id.main);
     }
     public void load() {
         List<String> lines = null;

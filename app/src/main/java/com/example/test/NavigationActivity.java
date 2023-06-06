@@ -3,11 +3,16 @@ package com.example.test;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.concurrent.TimeUnit;
+
+import nl.dionsegijn.konfetti.core.Party;
+import nl.dionsegijn.konfetti.core.PartyFactory;
+import nl.dionsegijn.konfetti.core.emitter.Emitter;
+import nl.dionsegijn.konfetti.core.emitter.EmitterConfig;
+import nl.dionsegijn.konfetti.core.models.Size;
 
 public class NavigationActivity extends AppCompatActivity {
     Button activities, dailyChallenge, newday, openMain;
@@ -62,5 +67,18 @@ public class NavigationActivity extends AppCompatActivity {
     public void openMain() {
         Intent I = new Intent(this, MainActivity.class);
         startActivity(I);
+    }
+    EmitterConfig emitterConfig = new Emitter(5L, TimeUnit.SECONDS).perSecond(50);
+    public Party party = new PartyFactory(emitterConfig)
+            .angle(270)
+            .spread(90)
+            .setSpeedBetween(1f, 5f)
+            .timeToLive(2000L)
+            .sizes(new Size(12, 5f, 0.2f))
+            .position(0.0, 0.0, 1.0, 0.0)
+            .build();
+    public void setButtonColor(int buttonId) {
+        Button button = findViewById(buttonId);
+        button.setSelected(true);
     }
 }

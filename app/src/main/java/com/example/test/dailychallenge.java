@@ -26,24 +26,14 @@ public class dailychallenge extends NavigationActivity {
         setContentView(R.layout.activity_dailychallenge);
         Calendar calendar = Calendar.getInstance();
         int day = calendar.get(Calendar.DAY_OF_MONTH);
-        String[] dailyChallengeArray = {"Take a piece of paper and write down how your day has been going. This activity should take 5 minutes"
-                , "Isolate yourself from distractions and find a silent place to rest. Then reflect on everything bad that happened today. This activity should take 5 minutes."
+        String[] dailyChallengeArray = {"Write & Reflect: Take a piece of paper and write down how your day has been going. This activity should take 5 minutes"
+                , "Tranquil Retreat: Isolate yourself from distractions and find a silent place to rest. Then reflect on everything bad that happened today. This activity should take 5 minutes.", "Gratitude Journaling: Write down three things you are grateful for today. Reflecting on positive aspects of your life can boost your mood and foster a sense of appreciation.", "Positive Affirmations: Repeat three positive affirmations to yourself. Focus on self-love, resilience, and inner strength.", "Acts of Kindness: Perform a kind gesture for someone today, such as offering help, giving a compliment, or sending a thoughtful message."
         };
         String dailyChallengeText = dailyChallengeArray[day % dailyChallengeArray.length];
         TextView dailyChallenge = findViewById(R.id.dailyChallenge);
         dailyChallenge.setText(dailyChallengeText);
 
         KonfettiView konfettiView = findViewById(R.id.theUIKonfettiView);
-        EmitterConfig emitterConfig = new Emitter(5L, TimeUnit.SECONDS).perSecond(50);
-        Party party = new PartyFactory(emitterConfig)
-                .angle(270)
-                .spread(90)
-                .setSpeedBetween(1f, 5f)
-                .timeToLive(2000L)
-                .sizes(new Size(12, 5f, 0.2f))
-                .position(0.0, 0.0, 1.0, 0.0)
-                .build();
-
         Button completedButton = findViewById(R.id.dailyChallengeButton);
         completedButton.setOnClickListener(view ->
                 konfettiView.start(party)
@@ -51,5 +41,6 @@ public class dailychallenge extends NavigationActivity {
         setNewDayClicker();
         setActivitiesClicker();
         setMainClicker();
+        setButtonColor(R.id.dailychallenge);
     }
 }
