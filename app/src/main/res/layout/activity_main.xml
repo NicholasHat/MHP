@@ -17,27 +17,15 @@
         android:layout_height="wrap_content"
         android:background="@drawable/graphbackround"
         android:padding="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/graphView"
-            android:layout_width="350dp"
-            android:layout_height="500dp"
-            android:background="@color/white"
-            android:backgroundTint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.229">
-
-        </com.jjoe64.graphview.GraphView>
     </RelativeLayout>
 
     <include
+        android:id="@+id/include"
         layout="@layout/navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -50,11 +38,26 @@
         android:text="Home"
         android:textColor="@color/white"
         android:textSize="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graphView"
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.483">
+
+    </com.jjoe64.graphview.GraphView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
