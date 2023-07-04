@@ -31,14 +31,5 @@ public class activities extends NavigationActivity {
         meditationbutton.setClickable(false);
         problemsButton.setClickable(false);
         musicButton.setClickable(false);
-        Fragment fr;
-        if (view == findViewById(R.id.yogaButton))
-            fr = new ActivityFragmentOne();
-        else
-            fr = new ActivityFragmentTwo();
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fragmentContainerView2, fr);
-        transaction.commit();
     }
 }
